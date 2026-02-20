@@ -1,6 +1,5 @@
 <div align="center">
 
-![Discord IaC Hero](file:///C:/Users/P1/.gemini/antigravity/brain/40e67ab1-8178-4359-9f74-36011e51c1b5/discord_iac_hero_1771611446515.png)
 
 # Discord IaC (Infrastructure-as-Code) CLI 🚀
 *An Enterprise-Grade Go CLI for Generating High-Performance, Scalable Discord Bot Architectures.*
