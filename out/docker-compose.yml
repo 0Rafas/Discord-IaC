@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DB_URL=postgres://user:pass@db:5432/botdb
+      - REDIS_URL=redis:6379
+    ports:
+      - "2112:2112"
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: botdb
+    ports:
+      - "5432:5432"
+
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+

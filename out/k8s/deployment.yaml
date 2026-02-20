@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: TitanBot-bot
+  labels:
+    app: TitanBot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: TitanBot
+  template:
+    metadata:
+      labels:
+        app: TitanBot
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "2112"
+    spec:
+      containers:
+      - name: bot
+        image: TitanBot-bot:latest # Replace with your registry
+        env:
+        - name: DISCORD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: bot-secrets
+              key: discord-token
