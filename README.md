@@ -29,7 +29,7 @@ It drops the traditional, slow direct-handling method and implements an advanced
 ### 1. Installation
 Install the tool via Go (or download the binary from the releases page):
 ```bash
-go install github.com/your-username/discord-iac@latest
+go install github.com/0Rafas/discord-iac@latest
 ```
 
 ### 2. Initialization
